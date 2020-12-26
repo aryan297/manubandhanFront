@@ -1,0 +1,39 @@
+
+<nav class="nav-bar">
+    <ul class="nav-bar-items">
+      <li><a href="#" target="_blank"><span>Home</span></a></li>
+      
+        <li><a href="#"> <span>Matches</span></a></li>
+        <li><a href="#"> <span>Inbox</span></a></li>
+        <li><a href="#" routerLink="/search"> <span>Search</span></a></li>
+        <li><a href="#"> <span>Premium</span></a></li>
+        <li><a href="#" (click)="logout()"> <span>Logout</span></a></li>
+    </ul>
+  </nav>
+
+  <mat-form-field class="example-full-width" style="width:900px"> 
+    <input type="text"
+           placeholder="Medicine Name"
+           matInput
+           (keyup)="searchThis($event.target.value)">
+   
+  </mat-form-field> 
+<div *ngFor="let data of pdata">
+    <div *ngFor="let d of pref">
+        <div *ngIf="d.ids===data.ids" class="main">
+            <mat-card style="display: flex; justify-content: space-between;" >
+                <div>
+                <img src="{{data.image}}" height="100px" width="100px" style="border-radius: 50%;"/>
+                <h2>Full Name:{{data.full_name}}</h2>
+                <h2>Age :{{d.ages}}</h2>
+                <h2>Qualification :{{d.quals}}</h2>
+            </div>
+            <div style="margin-bottom: 100px;">
+                <h2>Job:{{d.job}}</h2>
+                <h2>Annual Income:{{d.A_income}}</h2>
+            </div>
+            </mat-card><br>
+
+        </div>
+    </div>
+</div>
