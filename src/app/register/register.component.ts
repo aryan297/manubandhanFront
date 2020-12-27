@@ -20,22 +20,10 @@ export class RegisterComponent implements OnInit {
   data={};
   select='';
   ids=""
-  Avalue=[];
-  PValue=[];
-  FValue=[];
+
 
   constructor(private _formBuilder: FormBuilder, private service:MainService,private route:Router, private _snack:MatSnackBar) { 
-   this.service.getAdata().subscribe(data=>{
-     data=this.Avalue
-   });
-  
-   this.service.getFdata().subscribe(data=>{
-     data=this.FValue
-   })
-
-   this.service.getPdata().subscribe(data=>{
-     data=this.PValue
-   })
+ 
 
     this.ids =localStorage.getItem('ids')
     this.firstFormGroup = this._formBuilder.group({
@@ -80,16 +68,7 @@ export class RegisterComponent implements OnInit {
      F_income:[''],
      ids:['']
     });
-    this.thirdFormGroup = this._formBuilder.group({
-      ages:[''],
-      quals:[''],
-      job:[''],
-      A_income:[''],
-      complextion:[''],
-      heights:[''],
-      religion:[''],
-      castes:['']
-    });
+   
   }
 
   ngOnInit(): void {
@@ -135,25 +114,44 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.secondFormGroup.value);
     console.log(this.MainFormGroup.value);
-
-    this.service.postAdata(this.secondFormGroup.value).subscribe(data=>{
-      console.log(data);
-      
-    })
-    this.service.postFdata(this.MainFormGroup.value).subscribe(data=>{
-      console.log(data);
-      
-    })
-
     this.service.postPdata(this.data).subscribe(data=>{
       console.log(data);
+
+      this.service.postAdata(this.secondFormGroup.value).subscribe(data=>{
+        console.log(data);
+        
+      })
+      setTimeout(()=>{           
+        this.service.postFdata(this.MainFormGroup.value).subscribe(data=>{
+          console.log(data);
+          
+        })             
+       
+   }, 1000);
+   
+      this._snack.open("Added successfully", "cancel", {
+        duration: 5000,
+        
+      });
+
+      
+      setTimeout(()=>{           
+        return this.route.navigate(['/login'])
+       
+   }, 3000);
+   
+   
+      
     })
 
-    this._snack.open("Added successfully", "cancel", {
-      duration: 2000,
-    });
+  
+   
 
-    return this.route.navigate(['/profile'])
+   
+
+   
+
+   
     
   }
 

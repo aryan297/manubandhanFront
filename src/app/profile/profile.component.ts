@@ -24,6 +24,13 @@ export class ProfileComponent implements OnInit {
     });
     this.service.getPref().subscribe(data=>{
       this.pref=data
+      for(let i=0;i<this.pref.length;i++){
+        if(this.ids===this.pref[i].ids){
+         localStorage.setItem("part",this.pref[i].id)
+          
+          
+        }
+      }
     })
 
     this.service.getUserData().subscribe(data=>{
@@ -45,7 +52,9 @@ export class ProfileComponent implements OnInit {
   }
 
    logout(){
-     localStorage.removeItem('ids')
+     localStorage.removeItem('ids');
+     localStorage.removeItem("part");
+    localStorage.removeItem("pref_id");
      return this.route.navigate(['/'])
    }
 

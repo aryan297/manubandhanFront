@@ -18,11 +18,7 @@ export class LoginComponent implements OnInit {
 
     this.service.getUserData().subscribe(data=>{
       this.Values=data;
-      
-      for(let i=0;i<this.Values.length;i++){
-        console.log(this.Values[i].username);
-        
-      }
+  
       
     })
   this.form=this.fb.group({

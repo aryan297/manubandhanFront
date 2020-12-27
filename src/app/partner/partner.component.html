@@ -5,7 +5,7 @@
       </svg>
       
   <div class="main" *ngFor="let data of pref">
-      <div *ngIf="ids==data.ids || data.ids==null">
+      <div *ngIf="ids==data.ids || bool!=null">
   <form [formGroup]="thirdFormGroup"  method="POST">
 
     
@@ -58,11 +58,83 @@
         <mat-label>Caste</mat-label>
         <input matInput formControlName="castes" [(ngModel)]="data.castes" placeholder=""
                required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Looking for</mat-label>
+        <input matInput formControlName="lf" [(ngModel)]="data.lf" placeholder="MALE or Female"
+               required>
       </mat-form-field><br>
         <button mat-raised-button style="background-color: #AA3535;"(click)="add(data.id)">Submit</button>
       </mat-card>
   
   </form>
+
+ 
   </div>
+  </div>
+
+  <div *ngIf="bool===null" class="main">
+    <form [formGroup]="thirdFormGroup"  method="POST">
+
+    
+      <mat-card> 
+        <h2>Partner Prefences</h2>
+        <p>
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="ages" placeholder="" type="number">
+        </mat-form-field>
+        </p>
+  
+        <mat-form-field>
+          <mat-label>Qualification</mat-label>
+          <input matInput formControlName="quals"  placeholder=""
+                 required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Job Specification</mat-label>
+          <input matInput formControlName="job"  placeholder=""
+                 required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Annual Income</mat-label>
+          <input matInput formControlName="A_income"  placeholder=""
+                 type="number">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Complextion</mat-label>
+          <input matInput formControlName="complextion"  placeholder=""
+                 required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Height</mat-label>
+          <input matInput formControlName="heights" placeholder=""
+                 type="number">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Religion</mat-label>
+          <input matInput formControlName="religion"  placeholder=""
+                 required>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Caste</mat-label>
+          <input matInput formControlName="castes" placeholder=""
+                 required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Looking for</mat-label>
+          <input matInput formControlName="lf" placeholder="MALE or Female"
+                 required>
+        </mat-form-field><br>
+          <button mat-raised-button style="background-color: #AA3535;"(click)="adds()">Submit</button>
+        </mat-card>
+    
+    </form>
   </div>
   </body>

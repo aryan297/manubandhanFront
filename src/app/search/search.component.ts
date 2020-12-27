@@ -13,8 +13,10 @@ export class SearchComponent implements OnInit {
 
   pref:any=[];
   pdata:any=[]
+  ids=""
 
   constructor(private _formBuilder: FormBuilder, private service:MainService,private route:Router, private _snack:MatSnackBar) {
+    this.ids=localStorage.getItem("ids")
     this.service.getPref().subscribe(data=>{
       this.pref=data
     })
@@ -28,6 +30,8 @@ export class SearchComponent implements OnInit {
   }
   logout(){
     localStorage.removeItem('ids')
+    localStorage.removeItem("part");
+    localStorage.removeItem("pref_id")
     return this.route.navigate(['/'])
   }
 
@@ -37,9 +41,34 @@ export class SearchComponent implements OnInit {
     this.service.getPref().subscribe(res=>{
       this.pref=res;
 
+     
       filterArray=this.pref.filter((val)=>
-      val.quals.includes(value));
+      val.castes.includes(value));
+    
+
+     if(filterArray.length===0){
+        filterArray=this.pref.filter((val)=>
+      val.job.includes(value));
+
+      }
+
+     if(filterArray.length===0){
+        filterArray=this.pref.filter((val)=>
+        val.religion.includes(value));
+      }
+      
+      if(filterArray.length===0){
+        filterArray=this.pref.filter((val)=>
+        val.qual.includes(value).toLowerCase);
+      }
+      if(filterArray.length===0){
+        filterArray=this.pref.filter((val)=>
+        val.lf.includes(value).toLowerCase);
+      }
+ 
       this.pref=filterArray;
+
+    
       console.log(filterArray);
       
     });

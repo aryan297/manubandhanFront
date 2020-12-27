@@ -15,9 +15,11 @@ export class PartnerComponent implements OnInit {
   ids=""
   pref:any=[];
   id='';
-
+  bool="";
   constructor(private fb:FormBuilder, private service:MainService,private route:Router, private _snack:MatSnackBar) { 
     this.ids=localStorage.getItem('ids')
+    this.bool=localStorage.getItem("part")
+    
   
     this.thirdFormGroup = this.fb.group({
       ages:[''],
@@ -28,12 +30,20 @@ export class PartnerComponent implements OnInit {
       heights:[''],
       religion:[''],
       castes:[''],
+      lf:[''],
       ids:[''],
       id:['']
     });
 
     this.service.getPref().subscribe(data=>{
       this.pref=data
+      for(let i=0;i<this.pref.length;i++){
+        if(this.ids===this.pref[i].ids){
+         localStorage.setItem("part",this.pref[i].id)
+          
+          
+        }
+      }
     })
 
   }
@@ -47,25 +57,46 @@ export class PartnerComponent implements OnInit {
     this.thirdFormGroup.value.id=id;
     this.thirdFormGroup.value.ids=this.ids
 
-if(this.thirdFormGroup.value.id==null){
+
+
+    this.service.updatePref(this.thirdFormGroup.value).subscribe(data=>{
+      console.log(data);
+
+      
+
+    })
+  
+    this._snack.open("updated successfully", "cancel", {
+      duration: 2000,
+    });
+    return this.route.navigate(['/profile'])
+
+
+  }
+
+  adds(){
+   
+
+ 
+    this.thirdFormGroup.value.ids=this.ids
+
+
 
   this.service.postPref(this.thirdFormGroup.value).subscribe(data=>{
     console.log(data);
     
   })
-}
-else{
 
-    this.service.updatePref(this.thirdFormGroup.value).subscribe(data=>{
-      console.log(data);
-      
 
-    })
-  }
-    this._snack.open("updated successfully", "cancel", {
-      duration: 2000,
+    this._snack.open("Added successfully", "cancel", {
+      duration: 1000,
     });
-    return this.route.navigate(['/profile'])
+
+    setTimeout(()=>{      
+      return this.route.navigate(['/profile'])                     //<<<---using ()=> syntax
+    
+ }, 1000);
+   
 
 
   }
