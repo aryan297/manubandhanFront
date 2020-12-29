@@ -1,0 +1,180 @@
+
+<div *ngIf="ids === null">
+
+<h1>You need to login first</h1>
+</div>
+<div *ngIf="ids!=null">
+<nav class="nav-bar">
+  <ul class="nav-bar-items">
+    <li style="margin-left: 300px;" ><a href="#" target="_blank"><span>Home</span></a></li>
+    
+      <li><a href="#" routerLink="/matches"> <span>Matches</span></a></li>
+      <li><a href="#"routerLink="/inbox"> <span>Inbox</span></a></li>
+      <li><a href="#" routerLink="/search"> <span>Search</span></a></li>
+      <li style="margin-right: 800px;"><a href="#"> <span>Premium</span></a></li>
+      <li><a href="#" (click)="logout()"> <span>Logout</span></a></li>
+  </ul>
+</nav>
+
+<div class="example-action-buttons">
+    <button mat-button mat-raised-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button mat-raised-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <div *ngFor="let d of user">
+  <div *ngFor="let data of PValue">
+      <div  *ngIf="ids === data.ids" >
+          <div *ngIf="ids===d.unique">
+          <mat-card>
+
+          <img class="vals" [src]="data.image" >
+
+          <h2>Username :{{d.username}}</h2>
+          <h2>Email:{{d.email}}</h2>
+          <h2>Phone:{{d.tel}}</h2>
+          <button class="bts" style="margin-left: 70px;" mat-raised-button routerLink="/userUpdate">Update user</button>
+          
+          </mat-card>
+         </div>
+      </div>
+      </div>
+  </div>
+  <div class="main">
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal Information
+        </mat-panel-title>
+        <mat-panel-description>
+         About me
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+     <div *ngFor="let data of PValue">
+         <div class="basic" *ngIf="ids === data.ids">
+             <div>
+             <p>Full Name :{{data.full_name}}</p>
+             <p>Managed By:{{data.managed_by}}</p>
+             <p>Martial Status :{{data.m_status}}</p>
+             <p>Age:{{data.age}}</p>
+             <p>Occupation:{{data.occup}}</p>
+             <p>Blood Group:{{data.selected}}</p>
+            </div>
+            <div>
+             <p>Qualification:{{data.qual}}</p>
+             <p>Height:{{data.height}}</p>
+             <p>Weight:{{data.Weight}}</p>
+             <p>Caste:{{data.caste}}</p>
+             <p>Income:{{data.income}}</p>
+          </div>
+
+         </div>
+     </div>
+     <button class="bts" mat-raised-button routerLink="/pinfo">Update data</button>
+  
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Astrological data
+          </mat-panel-title>
+          <mat-panel-description>
+            Astrology
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let data of Avalue">
+            <div *ngIf="ids===data.ids" class="basic">
+                <div>
+                <p>DOB:{{data.dob | date}}</p>
+                <p>Birth Time:{{data.btime}}</p>
+                <p>Birth Place:{{data.bplace}}</p>
+                <p>Manglik:{{data.manglik}}</p>
+                <p>Rashi:{{data.rashi}}</p>
+                </div>
+                <div>
+                <p>Nadi:{{data.nadi}}</p>
+                <p>Gotra:{{data.gotra}}</p>
+                <p>Devak:{{data.devak}}</p>
+                <p>Gaan:{{data.gaan}}</p>
+                </div>
+            </div>
+        </div>
+      
+        <button class="bts" mat-raised-button routerLink="/astro">Update data</button>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Family data
+          </mat-panel-title>
+          <mat-panel-description>
+            Family Background
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let data of FValue">
+            <div *ngIf="ids===data.ids" class="basic">
+                <div>
+                <p>Father's Name:{{data.F_name}}</p>
+                <p>Father Occupation:{{data.F_occup}}</p>
+                <p>Mother's Name:{{data.M_name}}</p>
+                <p>Mother's Occupation:{{data.M_occup}}</p>
+                <p>Brother's:{{data.brother}}</p>
+                </div>
+                <div>
+                <p>Sister's:{{data.sister}}</p>
+                <p>Uncle:{{data.uncle}}</p>
+                <p>Uncle(Maternal):{{data.uncle_M}}</p>
+                <p>Aunts:{{data.aunts}}</p>
+                <p>Family Income:{{data.F_income}}</p>
+                </div>
+
+            </div>
+        </div>
+        <button class="bts" mat-raised-button routerLink="/family">Update data</button>
+    
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Partner Prefences
+          </mat-panel-title>
+          <mat-panel-description>
+            Basic description
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let data of pref">
+            <div *ngIf="ids===data.ids" class="basic">
+                <div>
+                <p>Age:{{data.ages}}</p>
+                <p>Qualification:{{data.quals}}</p>
+                <p>Job:{{data.job}}</p>
+                <p>Annual Income:{{data.A_income}}</p>
+                <p>Complextion:{{data.complextion}}</p>
+                </div>
+                <div>
+                <p>Height:{{data.heights}}</p>
+                <p>Religion:{{data.religion}}</p>
+                <p>Caste:{{data.castes}}</p>
+                <p>Looking For:{{data.lf}}</p>
+           
+                </div>
+                
+            </div>
+    
+    
+        </div>
+        <button class="bts" mat-raised-button routerLink="/Pupdate">Update data</button>
+        
+    
+      </mat-expansion-panel>
+
+  </mat-accordion>
+  </div>
+</div>

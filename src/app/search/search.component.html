@@ -1,0 +1,44 @@
+
+<nav class="nav-bar">
+    <ul class="nav-bar-items">
+      <li><a href="#" target="_blank"><span>Home</span></a></li>
+      
+        <li><a href="#" routerLink="/profile"> <span>Profile</span></a></li>
+        <li><a href="#"> <span>Inbox</span></a></li>
+        <li><a href="#" routerLink="/search"> <span>Search</span></a></li>
+        <li style="margin-right: 800px;"><a href="#"> <span>Premium</span></a></li>
+        <li><a href="#" (click)="logout()"> <span>Logout</span></a></li>
+    </ul>
+  </nav>
+
+  <mat-form-field class="example-full-width" style="width:400px; font-size: 25px; margin-left: 40px;" > 
+    <input type="text"
+           placeholder="Search"
+           matInput
+           (keyup)="searchThis($event.target.value)">
+   
+  </mat-form-field> 
+<div *ngFor="let data of pdata" class="main">
+    <div *ngFor="let d of pref" >
+        <div *ngIf="d.ids===data.ids && d.ids != ids"  class="cols">
+            <mat-card style="display: flex; justify-content: space-between;">
+                <div>
+                <img src="{{data.image}}" height="100px" width="100px" style="border-radius: 50%;"/>
+                <h2>Full Name:{{data.full_name}}</h2>
+                <h2>Age :{{d.ages}}</h2>
+                <h2>Qualification :{{d.quals}}</h2>
+                <h2>Height:{{d.heights}}</h2>
+            </div>
+            <div style="margin-bottom: 100px;">
+                <h2>Job:{{d.job}}</h2>
+                <h2>Annual Income:{{d.A_income}}</h2>
+                <h2>Religion:{{d.religion}}</h2>
+                <h2>Caste:{{d.castes}}</h2>
+                <h2>Complextion:{{d.complextion}}</h2>
+                <h2>{{d.lf}}</h2>
+            </div>
+            </mat-card><br><br>
+
+        </div>
+    </div>
+</div>
