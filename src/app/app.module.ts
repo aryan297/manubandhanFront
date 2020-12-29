@@ -30,18 +30,9 @@ import { PinfoComponent } from './pinfo/pinfo.component';
 import { AstroUpdateComponent } from './astro-update/astro-update.component';
 import { FbackgroundComponent } from './fbackground/fbackground.component';
 import { SearchComponent } from './search/search.component';
-<<<<<<< HEAD
-import { TermsComponent } from './terms/terms.component';
-import { ServicesComponent } from './services/services.component';
-import { PrivacyComponent } from './privacy/privacy.component';
-import { FaqComponent } from './faq/faq.component';
-import { ContactusComponent } from './contactus/contactus.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { MatchesComponent } from './matches/matches.component';
-import { PremiumComponent } from './premium/premium.component';
-import { InboxComponent } from './inbox/inbox.component';
-=======
->>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
+import { MatTableModule } from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator"
+import { MatSortModule} from "@angular/material/sort"
 
 @NgModule({
   declarations: [
@@ -57,21 +48,11 @@ import { InboxComponent } from './inbox/inbox.component';
     ProfileUpdateComponent,
     PinfoComponent,
     AstroUpdateComponent,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     FbackgroundComponent,
-<<<<<<< HEAD
-    SearchComponent,
-    TermsComponent,
-    ServicesComponent,
-    PrivacyComponent,
-    FaqComponent,
-    ContactusComponent,
-    AboutusComponent,
-    MatchesComponent,
-    PremiumComponent,
-    InboxComponent
-=======
     SearchComponent
->>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
   ],
   imports: [
     BrowserModule,
