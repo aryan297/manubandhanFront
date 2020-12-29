@@ -17,6 +17,7 @@
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Personal Information</ng-template>
        
+<<<<<<< HEAD
         <mat-form-field >
           <mat-label>Profile Manage By</mat-label>
           <mat-select [(value)]="selected" required>
@@ -28,10 +29,17 @@
          
           </mat-select>
         </mat-form-field><br/>
+=======
+        <mat-form-field>
+          <mat-label>Profile Manage By</mat-label>
+          <input matInput formControlName="managed_by" placeholder="Name" required>
+        </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
 
         <mat-form-field>
             <mat-label>Full Name</mat-label>
             <input matInput formControlName="full_name" placeholder="Last name, First name" required>
+<<<<<<< HEAD
           </mat-form-field><br/>
           <mat-form-field>
             <mat-label>Age</mat-label>
@@ -65,15 +73,50 @@
             <mat-label>Height</mat-label>
             <input matInput formControlName="height" placeholder="Height" required>
           </mat-form-field><br/>
+=======
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age" placeholder="age" type="number" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Martial Status</mat-label>
+            <input matInput formControlName="m_status" placeholder="status" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Qualification</mat-label>
+            <input matInput formControlName="qual" placeholder="Qualification" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Occupation</mat-label>
+            <input matInput formControlName="occup" placeholder="Occupation" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Annual Income</mat-label>
+            <input matInput formControlName="income" placeholder="Income" type="number" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Height</mat-label>
+            <input matInput formControlName="height" placeholder="Height" type="number" required>
+          </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
 
           <mat-form-field>
             <mat-label>Weight</mat-label>
             <input matInput formControlName="weight" placeholder="Weight" type="number" required>
+<<<<<<< HEAD
           </mat-form-field><br/>
           <mat-form-field>
             <mat-label>Caste</mat-label>
             <input matInput formControlName="caste" placeholder="Caste"  required>
           </mat-form-field><br/>
+=======
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Caste</mat-label>
+            <input matInput formControlName="caste" placeholder="Caste"  required>
+          </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
           <mat-form-field >
             <mat-label>Blood group</mat-label>
             <mat-select [(value)]="selected">
@@ -87,7 +130,11 @@
               <mat-option value="AB-">AB-</mat-option>
               <mat-option value="AB+">AB+</mat-option>
             </mat-select>
+<<<<<<< HEAD
           </mat-form-field><br/>
+=======
+          </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
 
          
             <input #Image type="file" (change)="handleFileInput($event.target.files)"/>
@@ -107,6 +154,7 @@
           <mat-form-field>
             <mat-label>Fathers Name</mat-label>
             <input matInput formControlName="F_name" placeholder="name" required>
+<<<<<<< HEAD
           </mat-form-field><br/>
           <mat-form-field>
             <mat-label>Father Occupation</mat-label>
@@ -146,6 +194,47 @@
           <mat-form-field>
             <mat-label>Family Incone</mat-label>
             <input matInput formControlName="F_income" placeholder="Income" type="number" required>
+=======
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Father Occupation</mat-label>
+            <input matInput formControlName="F_occup" placeholder="Occupation" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Mothers Name</mat-label>
+            <input matInput formControlName="M_name" placeholder="Name" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Mothers Occupation</mat-label>
+            <input matInput formControlName="M_occup" placeholder="Last name, First name" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Brother(s)</mat-label>
+            <textarea matInput formControlName="brother" placeholder="brother"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Sister(s)</mat-label>
+            <textarea matInput formControlName="sister" placeholder="Sister"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Uncle</mat-label>
+            <input matInput formControlName="uncle" placeholder="Name" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Uncle(Maternal)</mat-label>
+            <input matInput formControlName="uncle_M" placeholder="Name" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Aunts</mat-label>
+            <input matInput formControlName="aunts" placeholder="Name" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Family Incone</mat-label>
+            <input matInput formControlName="F_income" placeholder="Income" type="number">
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
           </mat-form-field>
           <div>
             <button mat-button matStepperNext>Next</button>
@@ -161,11 +250,16 @@
             <input matInput formControlName="dob" [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+<<<<<<< HEAD
           </mat-form-field><br/>
+=======
+          </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
 
           <mat-form-field>
             <mat-label>Birth Time</mat-label>
             <input matInput formControlName="btime" placeholder="20:12" 
+<<<<<<< HEAD
                    >
           </mat-form-field><br/>
         <mat-form-field>
@@ -206,6 +300,43 @@
             <mat-label>Gaan</mat-label>
             <input matInput formControlName="gaan" placeholder="gaan" >
           </mat-form-field><br/>
+=======
+                   required>
+          </mat-form-field>
+        <mat-form-field>
+          <mat-label>Birth place</mat-label>
+          <input matInput formControlName="bplace" placeholder=""
+                 required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Rashi</mat-label>
+            <input matInput formControlName="rashi" placeholder=""
+                   required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Nadi</mat-label>
+            <input matInput formControlName="nadi" placeholder=""
+                   required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Manglik</mat-label>
+            <input matInput formControlName="manglik" placeholder=""
+                   required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Gotra</mat-label>
+            <input matInput formControlName="gotra" placeholder="" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Devak</mat-label>
+            <input matInput formControlName="devak" placeholder="" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Gaan</mat-label>
+            <input matInput formControlName="gaan" placeholder="" required>
+          </mat-form-field>
+>>>>>>> 8db2f398e91c19cd7f12377c68e0f5eee55e96ae
         <div>
         
           <p>You are done now</p>
