@@ -56,10 +56,10 @@ export class SearchComponent implements OnInit {
         filterArray=this.pref.filter((val)=>
         val.religion.includes(value));
       }
-      
+
       if(filterArray.length===0){
         filterArray=this.pref.filter((val)=>
-        val.qual.includes(value).toLowerCase);
+        val.quals.includes(value));
       }
       if(filterArray.length===0){
         filterArray=this.pref.filter((val)=>

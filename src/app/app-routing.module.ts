@@ -12,6 +12,7 @@ import { PinfoComponent } from './pinfo/pinfo.component';
 import { AstroUpdateComponent } from './astro-update/astro-update.component';
 import { FbackgroundComponent } from './fbackground/fbackground.component';
 import { SearchComponent } from './search/search.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [{path:'',component:HomeComponent},{
@@ -26,7 +27,10 @@ const routes: Routes = [{path:'',component:HomeComponent},{
 {path:'pinfo',component:PinfoComponent},
 {path:'astro',component:AstroUpdateComponent},
 {path:'family',component:FbackgroundComponent},
-{path:"search",component:SearchComponent}];
+{path:"search",component:SearchComponent},
+{path:'admin',component:AdminComponent}]
+
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

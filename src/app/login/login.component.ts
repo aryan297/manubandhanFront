@@ -38,6 +38,13 @@ export class LoginComponent implements OnInit {
       for(let i=0;i<this.Values.length;i++){
         console.log("kkkk",this.Values[i].username);
         if(this.Values[i].username===this.form.value.username && this.Values[i].password===this.form.value.password){
+
+          if(this.Values[i].is_admin===true){
+            localStorage.setItem("ids",this.Values[i].unique)
+            return this.route.navigate(["/admin"])
+         
+
+          }
           this.flag=false;
           //console.log(this.Values[i]);
           localStorage.setItem("ids",this.Values[i].unique)

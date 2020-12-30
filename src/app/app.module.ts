@@ -1,5 +1,6 @@
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { FbackgroundComponent } from './fbackground/fbackground.component';
 import { SearchComponent } from './search/search.component';
 import { MatTableModule } from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator"
-import { MatSortModule} from "@angular/material/sort"
+import { MatSortModule} from "@angular/material/sort";
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -48,11 +50,10 @@ import { MatSortModule} from "@angular/material/sort"
     ProfileUpdateComponent,
     PinfoComponent,
     AstroUpdateComponent,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     FbackgroundComponent,
-    SearchComponent
+    SearchComponent,
+    AdminComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,13 @@ import { MatSortModule} from "@angular/material/sort"
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     MatButtonModule,
     MatInputModule,
     MatCardModule,
@@ -75,6 +82,7 @@ import { MatSortModule} from "@angular/material/sort"
     MatIconModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

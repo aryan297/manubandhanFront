@@ -62,6 +62,9 @@ export class MainService {
   updateUser(data){
     return this.http.put(this.Get_utl+"/"+data.id,data)
   }
+  deleteUser(data){
+    return this.http.delete(this.Get_utl+"/"+data)
+  }
 
   updatePdata(data){
     //console.log(data);
