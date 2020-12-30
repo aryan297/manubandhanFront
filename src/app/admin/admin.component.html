@@ -3,14 +3,14 @@
 
 </div>
 <div *ngIf="ids!=null && bool==true"> 
-<div fxLayout fxLayoutAlign="center center" style="font-size: large; display: flex; justify-content: center;" >
-    <mat-form-field fxFlex="40%">
+<div fxLayout fxLayoutAlign="center center" style="font-size: large; display: flex; justify-content: flex-start; margin-left: 10px;" >
+    <mat-form-field fxFlex="40%" style="width: 50%;">
         <input matInput type="text" (keyup)="doFilter($event.target.value)" style="color:black" placeholder="Search">
 
     </mat-form-field>
 
-    <div  style="margin-left: 800px;">
-        <button mat-raised-button (click)=logout()>Logout</button>
+    <div  style="margin-left: 800px; font-size: 40px;">
+        <button style="font-size:30px;margin-bottom:30px" mat-raised-button (click)=logout()>Logout</button>
     </div>
 </div>
 
