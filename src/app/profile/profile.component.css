@@ -78,7 +78,7 @@
 
 .main {
   left: 50%;
-  top: 90%;
+  top: 85%;
   position: absolute;
   width: 400px;
   -webkit-transform: translate3d(-50%, -50%, 0);

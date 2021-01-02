@@ -85,6 +85,11 @@
   flex: 1;
  
 }
+
+.vals{
+  display: flex;
+  justify-content: space-evenly;
+}
 .mat-card{
 
   height: 380px;

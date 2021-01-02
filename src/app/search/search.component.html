@@ -11,13 +11,41 @@
     </ul>
   </nav>
 
-  <mat-form-field class="example-full-width" style="width:400px; font-size: 25px; margin-left: 40px;" > 
+  <div class="vals">
+
+    <div>
+
+  <mat-form-field class="example-full-width" style="width:400px; font-size: 15px; margin-left: 40px;" > 
     <input type="text"
-           placeholder="Search"
+           placeholder="Complextion"
+           matInput
+           (keyup)="searchThis($event.target.value)">
+   
+  </mat-form-field> <br>
+
+  <mat-form-field class="example-full-width" style="width:400px; font-size: 15px; margin-left: 40px;" > 
+    <input type="text"
+           placeholder="Caste"
+           matInput
+           (keyup)="searchThis($event.target.value)">
+   
+  </mat-form-field> <br>
+  <mat-form-field class="example-full-width" style="width:400px; font-size: 15px; margin-left: 40px;" > 
+    <input type="text"
+           placeholder="Religion"
+           matInput
+           (keyup)="searchThis($event.target.value)">
+   
+  </mat-form-field> <br>
+  <mat-form-field class="example-full-width" style="width:400px; font-size: 15px; margin-left: 40px;" > 
+    <input type="text"
+           placeholder="Job"
            matInput
            (keyup)="searchThis($event.target.value)">
    
   </mat-form-field> 
+    </div>
+    <div>
 <div *ngFor="let data of pdata" class="main">
     <div *ngFor="let d of pref" >
         <div *ngIf="d.ids===data.ids && d.ids != ids"  class="cols">
@@ -41,4 +69,6 @@
 
         </div>
     </div>
+</div>
+</div>
 </div>
