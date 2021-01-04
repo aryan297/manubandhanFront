@@ -11,7 +11,7 @@
       <li><a href="#"> <span>Matches</span></a></li>
       <li><a href="#"> <span>Inbox</span></a></li>
       <li><a href="#" routerLink="/search"> <span>Search</span></a></li>
-      <li style="margin-right: 800px;"><a href="#"> <span>Premium</span></a></li>
+      <li style="margin-right: 700px;"><a href="#"> <span>Premium</span></a></li>
       <li><a href="#" (click)="logout()"> <span>Logout</span></a></li>
   </ul>
 </nav>
@@ -20,6 +20,7 @@
     <button mat-button mat-raised-button (click)="accordion.openAll()">Expand All</button>
     <button mat-button mat-raised-button (click)="accordion.closeAll()">Collapse All</button>
   </div>
+  <div class="size">
   <div *ngFor="let d of user">
   <div *ngFor="let data of PValue">
       <div  *ngIf="ids === data.ids" >
@@ -177,4 +178,5 @@
 
   </mat-accordion>
   </div>
+</div>
 </div>

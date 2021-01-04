@@ -35,6 +35,8 @@ export class SearchComponent implements OnInit {
     return this.route.navigate(['/'])
   }
 
+  
+
 
   searchThis(value){
     let filterArray=[];
